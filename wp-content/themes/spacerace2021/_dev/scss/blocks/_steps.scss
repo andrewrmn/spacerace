@@ -1,0 +1,55 @@
+// ---------------------------------------------------------------------
+//
+// ---------------------------------------------------------------------
+
+.step-list {
+
+  @include start-at($medium) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+		margin-left: -12px;
+  }
+}
+
+.step {
+  width: 100%;
+  margin-bottom: 48px;
+
+  @include start-at($medium) {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0 12px 48px;
+  }
+
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.step-circles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    position: relative;
+    width: 45%;
+    margin: 0 -48px;
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 2;
+    }
+
+    &:nth-child(2) {
+
+    }
+  }
+}

@@ -1,0 +1,152 @@
+// ---------------------------------------------------------------------
+//  Site Footer Styles
+// ---------------------------------------------------------------------
+
+.site-footer {
+  overflow: hidden;
+  background: $black;
+  color: $white;
+  padding-top: 48px;
+  font-size: 14px;
+
+  @include start-at($medium) {
+    padding-top: 110px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  b {
+    display: block;
+    font-weight: 500 !important;
+  }
+
+  a {
+    color: $white;
+    transition: opacity $trans;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.site-footer__inner {
+
+}
+
+.site-footer__nav {
+
+  li + li {
+    margin-top: 10px;
+  }
+  a {
+    font-size: 14px;
+    font-weight: 400;
+    transition: color $trans;
+
+    &:hover {
+      color: $brand;
+    }
+  }
+}
+
+// ----------------------------------------
+// Sign up
+// ----------------------------------------
+
+.site-footer__signup {
+  max-width: 310px;
+
+  > a {
+    display: block;
+    width: 32px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  @include start-at($large) {
+
+  }
+}
+
+// ----------------------------------------
+// Links
+// ----------------------------------------
+
+.social-list-stacked {
+
+  @include start-at($small) {
+
+  }
+
+  @include start-at($large) {
+
+  }
+}
+
+// ----------------------------------------
+// Social
+// ----------------------------------------
+
+.site-footer__social {
+
+}
+
+
+// ----------------------------------------
+// Legal
+// ----------------------------------------
+
+.site-footer__legal {
+  background: $black;
+  border-top: 1px solid #3D3D58;
+  margin-top: 36px;
+  padding: 36px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include start-at($large) {
+      text-align: right;
+      justify-content: flex-end;
+    }
+
+    li {
+      display: block;
+      margin-left: 12px;
+    }
+
+    a {
+      font-size: 14px;
+
+
+    }
+  }
+
+  small {
+    font-size: 14px;
+    margin-top: 24px;
+    font-style: normal;
+
+    width: 100%;
+
+    @include start-at($large) {
+      width: auto;
+      margin-top: 0;
+
+      text-align: left;
+      min-width: 320px;
+    }
+  }
+
+}

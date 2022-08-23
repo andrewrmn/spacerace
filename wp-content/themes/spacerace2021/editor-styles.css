@@ -1,0 +1,49 @@
+#tinymce h1,
+#tinymce h2,
+#tinymce h3,
+#tinymce h4,
+#tinymce h5,
+#tinymce h6,
+#tinymce p {
+  font-family: 'neue-haas-grotesk-text', sans-serif;
+}
+
+#tinymce h1,
+#tinymce h2,
+#tinymce h3 {
+  font-family: 'neue-haas-grotesk-text', sans-serif;
+  font-weight: 600 !important;
+}
+#tinymce h4 {
+  font-weight: 600 !important;
+  font-family: 'neue-haas-grotesk-text', sans-serif;
+}
+#tinymce p.p-lg {
+  font-size: 20px !important;
+}
+#tinymce p.p-sm {
+  font-size: 14px !important;
+}
+
+#tinymce h1.h0,
+#tinymce h2.h0 {
+  font-size: 64px !important;
+  line-height: 1 !important;
+}
+
+#tinymce h2 {
+  font-size: 40px !important;
+  line-height: 1 !important;
+}
+
+#tinymce h3 {
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+#tinymce .h6-alt {
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 500;
+  font-size: 13px !important;
+}

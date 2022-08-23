@@ -1,0 +1,224 @@
+// ---------------------------------------------------------------------
+//  Index
+// ---------------------------------------------------------------------
+
+.post {
+
+    h1 {
+        color: $brand;
+    }
+}
+
+.post__meta {
+    display: flex;
+    align-items: baseline;
+    font-size: 16px;
+
+    > * + * {
+        &:before {
+            content: '|';
+            display: inline-block;
+            margin: 0 4px;
+        }
+    }
+}
+
+a.post__author {
+    color: $brand;
+}
+
+
+// ----------------------------------------
+// Content
+// ----------------------------------------
+
+
+.post-body {
+    max-width: 1300px;
+    margin: 0 auto 80px;
+}
+
+@include start-at($medium) {
+    .post-body.wrapper-wide {
+        overflow: initial !important;
+    }
+
+    .post-body {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+}
+
+
+.post-content {
+    margin-bottom: 80px;
+
+    @include start-at($medium) {
+        width: 68%;
+        flex-grow: 1;
+        order: 2;
+        padding-right: 48px;
+    }
+    @include start-at(1300px) {
+        width: 50%;
+        order: 2;
+        padding-right: 24px;
+    }
+
+    .rte {
+        max-width: 590px;
+        margin: 0;
+
+        @include start-at($medium) {
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+
+}
+
+.wp-block-quote {
+    position: relative;
+    z-index: 2;
+    padding-left: 28px;
+    width: 100%;
+    margin: 36px 0;
+    border: none !important;
+
+    p {
+        font-weight: 500;
+        font-size: 20px !important;
+        line-height: 1.4;
+
+        @include start-at($medium) {
+            font-size: 28px !important;
+        }
+    }
+
+    cite {
+        color: $brand-light;
+        font-family: $sans-serif;
+        font-size: 14px !important;
+        font-weight: 500;
+        font-style: normal !important;
+
+        @include start-at($medium) {
+            font-size: 16px !important;
+        }
+    }
+
+
+    @include start-at($medium) {
+        width: 120%;
+        padding-left: 60px;
+    }
+
+}
+
+
+// ----------------------------------------
+// Sidebar
+// ----------------------------------------
+
+.post-info {
+    width: 100%;
+    border-top: 1px solid $brand-light;
+    padding-top: 36px;
+
+    @include start-at($medium) {
+        padding-top: 170px;
+        border-top: none;
+        width: 28%;
+        order: 1;
+        margin-bottom: 40px;
+        max-width: 280px;
+
+        > * {
+            max-width: 262px;
+        }
+
+    }
+
+    @include start-at(1300px) {
+        width: 20%;
+        margin-bottom: 60px;
+    }
+}
+
+
+// ----------------------------------------
+// Social Share
+// ----------------------------------------
+
+.social-share {
+
+    //margin-bottom: 40px;
+    width: 100%;
+
+    @include start-at($medium) {
+        max-width: 226px;
+    }
+
+    @include stop-at($medium) {
+        margin: 0 auto 24px;
+    }
+
+    .social-share__list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 12px;
+    }
+
+    a {
+        margin: 4px;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: $white;
+        background: $brand;
+        transition: color $trans, background $trans, border $trans;
+
+        + a {
+            margin-left: 12px;
+        }
+
+        &:hover {
+            color: $white;
+            background: darken($brand, 10%);
+            cursor: pointer;
+        }
+    }
+
+    @include start-at($small) {
+
+    }
+
+}
+
+
+// ----------------------------------------
+// Sidebar
+// ----------------------------------------
+
+.post-sidebar {
+    width: 100%;
+
+    @include start-at($medium) {
+        order: 3;
+    }
+
+    @include start-at(1300px) {
+        width: 20%;
+        min-width: 20%;
+    }
+}

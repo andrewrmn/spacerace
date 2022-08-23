@@ -1,0 +1,49 @@
+// ---------------------------------------------------------------------
+//
+// ---------------------------------------------------------------------
+
+.row--tiles {
+  align-items: stretch;
+
+  > * {
+    display: flex;
+  }
+
+  > * > * {
+    background: $white;
+    padding: 24px 16px;
+
+    @include start-at($large) {
+      padding: 48px 40px;
+    }
+  }
+}
+
+.row > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.row--images {
+  align-items: stretch;
+
+  figure {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 24px;
+    height: 0;
+    width: 100%;
+    padding-bottom: 75%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+}

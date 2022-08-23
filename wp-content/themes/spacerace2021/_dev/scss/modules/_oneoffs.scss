@@ -1,0 +1,67 @@
+// ---------------------------------------------------------------------
+//  One Offs
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Content
+// ----------------------------------------
+
+.insta {
+  width: 100%;
+
+  .wp-my-instagram,
+  .wpmi-list  {
+    width: 100%;
+  }
+
+  .widget-title {
+    @include link;
+    text-align: left;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background: url('./images/svgs/instagram.svg') center / 24px auto no-repeat;
+      display: block;
+      margin-right: 10px;
+    }
+  }
+
+  .wpmi-list,
+  .wpmi-list.wpmi-layout-5 {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include start-at($medium) {
+      flex-wrap: nowrap;
+    }
+
+    li.wpmi-item {
+      flex-grow: 0;
+      width: calc(50% - 10px) !important;
+      margin-bottom: 10px;
+
+      @include start-at($medium) {
+        width: calc(25% - 25px) !important;
+        margin-bottom: 10px;
+      }
+    }
+
+    @include stop-at($medium) {
+      li.wpmi-item:last-child {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.wpmi-me{
+  display: none;
+}

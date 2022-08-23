@@ -1,0 +1,68 @@
+// ---------------------------------------------------------------------
+//
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.carousel-long-wrap {
+  overflow: visible;
+  width: 100%;
+}
+
+.carousel-long-wrap__inner {
+  overflow: auto;
+  margin-left: 4%;
+  //@include wrapper;
+
+  &::-webkit-scrollbar {
+    display: block;
+    height: 2px;
+    background: $brand;
+  }
+  &::-webkit-scrollbar-track {
+    background: $gray;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $brand;
+  }
+}
+
+.carousel-long__inner {
+  width: 100%;
+  overflow: scroll;
+}
+
+.carousel-long {
+  width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.slider-slide {
+  width: 340px;
+  min-width: 340px;
+  height: auto;
+  margin: 0 10px 24px;
+  text-align: center;
+
+  &.slider-slide--intro {
+    text-align: left;
+
+    @include stop-at($medium) {
+      display: none;
+    }
+  }
+
+  @include start-at($medium) {
+    min-width: 480px;
+    width: 480px;
+
+    &.slider-slide--intro {
+      width: 350px;
+      min-width: 350px;
+    }
+  }
+}

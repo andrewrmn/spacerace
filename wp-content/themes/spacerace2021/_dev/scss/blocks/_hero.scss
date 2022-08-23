@@ -1,0 +1,94 @@
+// ---------------------------------------------------------------------
+//  Hero
+// ---------------------------------------------------------------------
+
+.hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $black;
+  color: $white;
+  padding: 132px 0;
+  min-height: 700px;
+  overflow: hidden;
+
+  @media(min-height: 1200px) {
+    max-height: 85vh !important;
+  }
+
+  &.hero--tall {
+    min-height: 800px;
+  }
+
+  &.hero--short {
+    min-height: 0;
+    padding: 200px 0 100px;
+  }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  > * {
+    max-width: 780px;
+  }
+}
+
+.hero__img {
+  @include cover-parent;
+  z-index: 1;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// ----------------------------------------
+// home
+// ----------------------------------------
+
+.hero__subhead {
+  position: relative;
+  display: inline-block;
+
+  span {
+    display: inline-block;
+  }
+
+  svg {
+    position: absolute;
+    left: calc(100% + 30px);
+    top: 10px;
+    width: 460px;
+
+  }
+}
+
+.hero__el,
+.hero__es {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  transform: translate3d(0, 0, 0);
+  transition: transform 1.2s ease-out;
+}
+.hero__el {
+  left: 8%;
+}
+.hero__es {
+  left: 4%;
+}
+
+.hero.in-view {
+  .hero__el {
+    transform: translate3d(0, -50%, 0);
+  }
+  .hero__es {
+    transform: translate3d(0, -50%, 0);
+  }
+}

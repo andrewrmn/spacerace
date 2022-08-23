@@ -1,0 +1,487 @@
+// ---------------------------------------------------------------------
+//  Form Styles
+// ---------------------------------------------------------------------
+
+form {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.gfield_description,
+.validation_error {
+  display: none;
+}
+
+.gfield.gform_validation_container {
+  @include visually-hidden;
+  opacity: 0;
+  margin-bottom: 0;
+}
+
+// ----------------------------------------
+// Labels
+// ----------------------------------------
+
+label,
+.label {
+  display: block;
+  line-height: 100%;
+  color: $white;
+  margin: 0;
+  font-family: $space;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0, -50%, 0);
+  left: 24px;
+  background: $black;
+  padding: 0 4px 0 8px;
+}
+
+.field-wrap,
+.gfield {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.gfield.half {
+  display: inline-block;
+  width: 49%;
+  margin-right: 1%;
+
+  + .half {
+    margin-left: 1%;
+    margin-right: 0;
+  }
+}
+
+.dynamic-labels {
+
+  .field-wrap,
+  .gfield {
+    label {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      margin: 0;
+      transform: translate3d(0, -50%, 0);
+      transition: transform $trans;
+      transform-origin: left;
+    }
+
+    &.is-active {
+
+      label {
+        transform: translate3d(0, -170%, 0) scale(0.8);
+      }
+    }
+  }
+
+  .gfield.gfield_textarea {
+
+    label {
+      top: 12px;
+      margin: 0;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.is-active {
+
+      label {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+  }
+}
+
+
+
+
+// ----------------------------------------
+// Inputs
+// ----------------------------------------
+
+$input-height: 56px;
+
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: $input-height;
+  margin: 0;
+  padding: 12px 24px;
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid $gray-dark;
+  background: transparent;
+  font-style: normal;
+  color: $white;
+  transition: all $transition;
+  font-size: 16px;
+  line-height: 125%;
+  font-feature-settings: 'salt' on;
+
+
+  &:focus,
+  &:active {
+    outline: none;
+    border-color: $white;
+    //box-shadow: inset 0px 0px 0px 1px $brand;
+  }
+
+  .is-touch & {
+    font-size: 16px;
+  }
+}
+
+
+textarea {
+  min-height: 176px;
+  max-height: 400px;
+  overflow: auto;
+  resize: vertical;
+  padding: 24px;
+}
+
+.gfield_error {
+  input,
+  textarea {
+    box-shadow: inset 0px 0px 0px 1px $error;
+    border-color: $error;
+  }
+}
+
+.gform_confirmation_message {
+  padding: 24px 0;
+  text-align: center;
+}
+
+.gfield.is-active,
+.field-wrap.is-active {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select {
+    border-color: $brand;
+    box-shadow: inset 0px 0px 0px 1px $brand;
+  }
+}
+
+input[type="submit"],
+button[type="submit"],
+.gform_button {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border-radius: 0;
+  display: inline-block;
+  @include btn;
+  display: inline-flex !important;
+  background: $white;
+  border-color: $white;
+  color: $black;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    background: $brand;
+    border-color: $brand;
+    cursor: pointer;
+
+    svg,
+    box-icon {
+      fill: $white;
+    }
+  }
+}
+
+
+.theme-light {
+  input,
+  textarea,
+  select {
+    border: 1px solid $black;
+    color: $black;
+
+    &:focus,
+    &:active {
+      border-color: $black;
+    }
+  }
+}
+
+
+// ----------------------------------------
+// Select
+// ----------------------------------------
+
+select {
+  display: block;
+  -webkit-appearance: none;
+  border-radius: 0;
+  position: relative;
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  //padding: 0 12px 0;
+  //  font-size: 12px;
+  cursor: pointer;
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+
+.select-wrap,
+.ginput_container_select {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 44px;
+    height: calc(100% - 2px);
+    top: 1px;
+    right: 1px;
+    background: transparent url('./images/svgs/chevron-down.svg') center / 13px 8px no-repeat;
+    pointer-events: none;
+  }
+}
+
+
+
+// ----------------------------------------
+// Custom Checkbox
+// ----------------------------------------
+
+.checkbox,
+.radio {
+  position: relative;
+
+  &:before {
+    content: '';
+    width: 24px;
+    height: 56px;
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    border: 1px solid $gray-dark;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .gfield_label {
+    margin-bottom: 18px;
+  }
+
+  label {
+    position: relative !important;
+  }
+}
+
+
+.gfield_radio,
+.gfield_checkbox {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+
+  li {
+    margin: 8px 16px 8px 0;
+  }
+
+  label {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $sans-serif;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  input {
+    @include visually-hidden;
+  }
+
+  label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+    border: 1px solid $white;
+    background-color: $black;
+    transition: background-color $transition;
+    cursor: pointer;
+  }
+
+  input:checked + label {
+
+    &:before {
+      background-color: $white;
+    }
+  }
+}
+
+
+// ----------------------------------------
+// File Uploader
+// ----------------------------------------
+.fileUpload {
+
+  input {
+    height: auto;
+    display: block;
+    border: 1px dashed $gray-light;
+    text-align: center;
+    padding: 38px 24px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all $transition;
+
+    &:hover {
+      border-color: $brand;
+      color: $brand;
+    }
+  }
+
+  .ginput_container {
+    height: auto;
+  }
+
+  .gform_drop_instructions {
+    //display: none;
+  }
+}
+
+
+// ----------------------------------------
+// touch styles
+// ----------------------------------------
+.is-touch {
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+}
+
+
+// ----------------------------------------
+// Placeholders
+// ----------------------------------------
+
+@mixin placeholders {
+  opacity: 0.4;
+  transition: opacity $trans;
+}
+
+::placeholder {
+  @include placeholders;
+}
+input:focus::-webkit-input-placeholder {
+  opacity: 0.2;
+}
+:-ms-input-placeholder {
+  @include placeholders;
+}
+input:focus:-ms-input-placeholder {
+  opacity: 0.2;
+}
+::-ms-input-placeholder {
+  @include placeholders;
+}
+input:focus::-ms-input-placeholder {
+  opacity: 0.2;
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.vg-form {
+
+  input,
+  select {
+    // display: block;
+    // appearance: none;
+    // border-radius: 0;
+    // border: 1px solid $black;
+  }
+
+  input[type="submit"],
+  button {
+    // margin-top: 24px;
+    // color: $white;
+    // width: 100%;
+    //
+    // &:hover {
+    //   background: $brand;
+    //   color: $white;
+    // }
+  }
+
+  .field-wrap--flush {
+
+    input, select {
+      padding: 0 12px;
+    }
+  }
+}
+
+
+$inline-form-height: 44px;
+form.inline {
+  display: flex;
+  position: relative;
+  width: 100%;
+
+  input[type="email"] {
+    width: 100%;
+    border: none;
+    height: $inline-form-height;
+    border-bottom: 1px solid $border;
+    padding: 0;
+
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
+    width: $inline-form-height;
+    min-width: $inline-form-height;
+    height: 43px;
+    padding: 0;
+    border-radius: 0;
+    margin-top: 0;
+  }
+}

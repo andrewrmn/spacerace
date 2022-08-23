@@ -1,0 +1,218 @@
+// ---------------------------------------------------------------------
+//
+// ---------------------------------------------------------------------
+
+.services {
+  position: relative;
+  overflow: hidden;
+
+  .services__sidebar {
+    padding: 0 $wrapper-padding;
+    margin-bottom: 48px;
+  }
+
+  @include start-at($large) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    .services__sidebar {
+      width: 40%;
+      margin-top: 72px;
+    }
+
+    .services__content {
+      flex-grow: 1;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @include start-at($xlarge) {
+    .services__sidebar h2 {
+      padding: 0;
+      position: absolute;
+      width: $wrapper-width;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.service-preview {
+  display: block;
+  padding: 156px $wrapper-padding 16px;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid $gray-dark;
+  margin-top: 18px;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: $brand;
+    display: block;
+    left: 0;
+    bottom: -1px;
+    position: absolute;
+    transition: transform $trans;
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+
+  @include start-at($large) {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 80px 0 64px;
+    margin-top: 0;
+  }
+
+  figure {
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 243px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include start-at($large) {
+      width: 40%;
+      max-width: 428px;
+      height: 100%;
+      transition: opacity $trans;
+      opacity: 0;
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  > span {
+    font-family: $space;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #C9C9D1;
+    padding-right: 12px;
+    width: 20%;
+
+
+    @include start-at($large) {
+      padding-right: 24px;
+      width: 108px;
+    }
+  }
+
+  .service-preview__content {
+    width: 100%;
+    margin: 20px 0 24px;
+
+    @include start-at($large) {
+      width: auto;
+      flex-grow: 1;
+      max-width: 600px;
+      margin: 0 24px 0 0;
+    }
+  }
+
+  h3 {
+    font-family: $mono;
+    //font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    font-weight: 600 !important;
+    line-height: 125%;
+    font-feature-settings: 'salt' on;
+    color: #FFFFFF;
+
+    @include start-at($medium) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+
+  }
+
+  .icon {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      white-space: nowrap;
+      padding-right: 8px;
+    }
+
+    svg {
+      .stroke {
+        display: none;
+      }
+      .fill {
+        opacity: 0;
+        transition: opacity $trans;
+      }
+    }
+
+    @include start-at($large) {
+      justify-content: flex-end;
+      width: 108px;
+
+      span {
+        display: none;
+      }
+
+      svg {
+        .stroke {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleY(1);
+    }
+
+    figure {
+      opacity: 1;
+    }
+
+    .icon {
+      .fill {
+        opacity: 1;
+      }
+
+      svg g ellipse {
+        fill: $black;
+      }
+      svg g path {
+        stroke: $black;
+      }
+    }
+  }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------

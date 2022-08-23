@@ -1,0 +1,104 @@
+// ---------------------------------------------------------------------
+//  Gravity Forms
+// ---------------------------------------------------------------------
+
+
+.gform_heading {
+    margin-bottom: 36px;
+}
+
+.gform_title {
+    @include h2;
+    font-weight: 400 !important;
+    margin: 0 0 16px !important;
+}
+
+.gform_description {
+    display: block;
+    max-width: 680px;
+}
+
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.ginput_container {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0;
+    min-height: $INPUT-HEIGHT;
+    margin-bottom: 24px;
+}
+
+// ----------------------------------------
+// Layouts
+// ----------------------------------------
+
+ul.gform_fields {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.gform_body {
+
+    .gfield {
+        width: 99%;
+        padding-bottom: 20px;
+        position: relative;
+        margin-bottom: 6px;
+
+        &.half {
+            width: 50%;
+            padding-right: 1%;
+        }
+    }
+
+    .third {
+        width: 32.3333333%;
+        margin-right: 1%;
+        float: left;
+    }
+
+}
+
+
+.gform_footer {
+    text-align: center;
+}
+
+
+// ----------------------------------------
+// Messages
+// ----------------------------------------
+
+.gfield_required {
+    display: none;
+}
+
+.validation_message {
+    color: $error;
+    //margin-top: 2px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}
+
+.gform_confirmation_message {
+    text-align: center;
+}
+
+.validation_error {
+    display: none;
+}
+
+.hide-label label {
+    @include visually-hidden;
+}
